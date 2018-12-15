@@ -1,0 +1,24 @@
+img {
+    background-color: #ddd;
+    border-radius: 100%;
+    height: 40px;
+    object-fit: cover;
+    width: 40px;
+    display: flex;
+}
+
+::ng-deep .mat-tooltip {
+    font-size: 16px;
+}
+
+.tam-max-nome-empresa {
+    max-width: 60%;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 320px) {
+    .tam-max-nome-empresa {
+        max-width: 180px;
+        padding-left: 10px;
+    }
+}

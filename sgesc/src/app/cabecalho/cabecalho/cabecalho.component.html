@@ -1,0 +1,21 @@
+<mat-toolbar class="preenchimento-total cabecalho" color="primary" [class.mat-elevation-z8]="true">
+  <mat-toolbar-row>
+    <button mat-icon-button [matMenuTriggerFor]="menugeral">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <mat-menu #menugeral="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="listar">Aluno</button>
+    </mat-menu>
+
+    <mat-menu #listar="matMenu">
+        <button mat-menu-item (click)="listarTodos()">Listar todos</button>
+    </mat-menu>
+  
+    <h2 class="mat-title espaco-esquerda tam-max-nome-empresa">{{ nomeEmpresa }}</h2>
+    <span class="empurrar-direita"></span>
+    <div>
+      <img matTooltip="Clique para sair" [matTooltipClass]="'tooltip'" src="https://i.stack.imgur.com/atUuf.png" alt="" />
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
