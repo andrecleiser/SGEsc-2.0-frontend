@@ -22,3 +22,8 @@
 .espaco-esquerda {
     padding-left: 50px;
 }
+
+.titulo-tabelas {
+    text-align: center;
+    background-color: darkseagreen;
+}

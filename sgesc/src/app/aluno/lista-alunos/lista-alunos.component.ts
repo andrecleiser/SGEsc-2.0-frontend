@@ -1,26 +1,33 @@
 import { AlunoResumo } from 'src/app/model/aluno/aluno-resumo';
 
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { AlunoService } from '../../service/aluno.service';
+import { ListaBaseComponent } from 'src/app/base/lista-base/lista-base.component';
 
 @Component({
   selector: 'sge-lista-alunos',
   templateUrl: './lista-alunos.component.html',
   styleUrls: ['./lista-alunos.component.css']
 })
-export class ListaAlunosComponent implements OnInit {
 
-  public displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+export class ListaAlunosComponent extends ListaBaseComponent {
+
   public resumo: AlunoResumo[];
   public colunasMostradas: string[] = ['nome', 'dataNascimento', 'responsavelNome', 'responsavelCelular'];
 
   constructor(
-    private alunoService: AlunoService) { }
+    public router: Router,
+    private alunoService: AlunoService) {
 
-  ngOnInit() {
-    this.alunoService
-      .resumir()
-      .subscribe(lista => this.resumo = lista);
+    super(router);
   }
+
+  protected acaoAtualizar(): void {
+    this.alunoService
+    .resumir()
+    .subscribe(lista => this.resumo = lista);
+  }
+
 }

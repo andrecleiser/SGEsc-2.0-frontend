@@ -6,13 +6,14 @@ import { ListaAlunosComponent } from './aluno/lista-alunos/lista-alunos.componen
 const routes: Routes = [
   {
     path: 'alunos',
-    component: ListaAlunosComponent
+    component: ListaAlunosComponent,
+    runGuardsAndResolvers: 'always'
   }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})
   ],
   exports: [RouterModule]
 })

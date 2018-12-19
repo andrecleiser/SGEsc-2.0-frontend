@@ -1,25 +1,37 @@
-<mat-table [dataSource]="resumo" class="mat-elevation-z8">
+<mat-card class="mat-elevation-z8">
+    <span>filtros</span>
+</mat-card>
+<mat-card class="mat-elevation-z8">
+    <mat-card-content>
+        <h1 class="titulo-tabelas">teste</h1>
+    </mat-card-content>
 
-    <ng-container matColumnDef="nome">
-        <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
-        <mat-cell *matCellDef="let resumoAluno"> {{resumoAluno?.nome}} </mat-cell>
-    </ng-container>
+    <mat-card-content>
+        <mat-table [dataSource]="resumo">
 
-    <ng-container matColumnDef="dataNascimento">
-        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-        <mat-cell *matCellDef="let resumoAluno"> {{resumoAluno?.dataNascimento}} </mat-cell>
-    </ng-container>
+            <ng-container matColumnDef="nome">
+                <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+                <mat-cell *matCellDef="let resumoAluno"> {{resumoAluno?.nome}} </mat-cell>
+            </ng-container>
 
-    <ng-container matColumnDef="responsavelNome">
-        <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
-        <mat-cell *matCellDef="let resumoAluno"> {{resumoAluno?.responsavelNome}} </mat-cell>
-    </ng-container>
+            <ng-container matColumnDef="dataNascimento">
+                <mat-header-cell *matHeaderCellDef> Data de nascimento </mat-header-cell>
+                <mat-cell *matCellDef="let resumoAluno"> {{resumoAluno?.dataNascimento | date: 'dd/MM/yyyy'}}
+                </mat-cell>
+            </ng-container>
 
-    <ng-container matColumnDef="responsavelCelular">
-        <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
-        <mat-cell *matCellDef="let resumoAluno"> {{resumoAluno?.responsavelCelular}} </mat-cell>
-    </ng-container>
+            <ng-container matColumnDef="responsavelNome">
+                <mat-header-cell *matHeaderCellDef> Responsável </mat-header-cell>
+                <mat-cell *matCellDef="let resumoAluno"> {{resumoAluno?.responsavelNome}} </mat-cell>
+            </ng-container>
 
-    <mat-header-row *matHeaderRowDef="colunasMostradas"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: colunasMostradas;"></mat-row>
-</mat-table>
+            <ng-container matColumnDef="responsavelCelular">
+                <mat-header-cell *matHeaderCellDef> Celular do responsável </mat-header-cell>
+                <mat-cell *matCellDef="let resumoAluno"> {{resumoAluno?.responsavelCelular}} </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="colunasMostradas"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: colunasMostradas;"></mat-row>
+        </mat-table>
+    </mat-card-content>
+</mat-card>
