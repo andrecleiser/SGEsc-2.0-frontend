@@ -1,13 +1,31 @@
-<div class="preenchimento-total cabecalho">
-    <sge-cabecalho nomeEmpresa="EMPRESA TESTESEMPRESA TESTESEMPRESA TESTES"></sge-cabecalho>
-</div>
-<div>
-    <mat-drawer-container fullScreen style="top: 70px">
+<header>
+    <div class="cabecalho">
+        <sge-cabecalho nomeEmpresa="EMPRESA TESTESEMPRESA TESTESEMPRESA TESTES"></sge-cabecalho>
+    </div>
+</header>
+<main>
+    <mat-drawer-container>
         <mat-drawer mode="side" opened>
-            testetestetestetesteteste
+            <mat-card>
+                fig1
+            </mat-card>
+            <mat-card>
+                fig1
+            </mat-card>
+            <mat-card>
+                fig1
+            </mat-card>
+            <mat-card>
+                fig1
+            </mat-card>
         </mat-drawer>
         <mat-drawer-content>
             <router-outlet></router-outlet>
         </mat-drawer-content>
     </mat-drawer-container>
-</div>
+</main>
+<footer>
+    <div class="rodape">
+        teste rodapé
+    </div>
+</footer>

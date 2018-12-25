@@ -1,9 +1,10 @@
-import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { switchMap, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Aluno } from '../model/aluno/aluno';
 import { AlunoResumo } from '../model/aluno/aluno-resumo';
@@ -13,7 +14,9 @@ import { AlunoResumo } from '../model/aluno/aluno-resumo';
 })
 export class AlunoService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private router: Router) { }
 
   public listar(): Observable<Aluno[]> {
     return this.http
@@ -25,9 +28,11 @@ export class AlunoService {
 
   public resumir(): Observable<AlunoResumo[]> {
     return this.http
-      .get<AlunoResumo[]>(`${environment.endpoints.backend}/alunos?resumo`)
+      .get<AlunoResumo[]>(`${environment.endpoints.backend}${this.router.url}`)
       .pipe(
-        tap((aluno: AlunoResumo[]) => console.log(aluno))
+        switchMap((alunoPaginador: any) => {
+          return of(alunoPaginador.content);
+        })
       );
   }
 }

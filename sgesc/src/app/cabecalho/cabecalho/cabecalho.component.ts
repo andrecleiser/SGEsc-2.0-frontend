@@ -17,6 +17,6 @@ export class CabecalhoComponent implements OnInit {
   }
 
   public listarTodos(): void {
-    this.router.navigate(['alunos']);
+    this.router.navigate(['alunos'], { queryParams: {'resumo': 'basico', 'page': 1, 'size': 3} });
   }
 }
