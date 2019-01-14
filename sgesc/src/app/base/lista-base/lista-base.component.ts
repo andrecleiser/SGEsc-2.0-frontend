@@ -3,6 +3,8 @@ import { Subscription } from 'rxjs';
 import { Component, OnDestroy } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 
+import { AlunoService } from '../../service/aluno.service';
+
 @Component({
   selector: 'sge-lista',
 })

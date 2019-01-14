@@ -1,31 +1,19 @@
-<header>
-    <div class="cabecalho">
-        <sge-cabecalho nomeEmpresa="EMPRESA TESTESEMPRESA TESTESEMPRESA TESTES"></sge-cabecalho>
+<div class="flex-container">
+  <header class="cabecalho">
+    <sge-cabecalho nomeEmpresa="EMPRESA TESTESEMPRESA TESTESEMPRESA TESTES"></sge-cabecalho>
+  </header>
+  <main class="grid-container">
+    <div class="menu-container">
+      <button mat-mini-fab>
+        <mat-icon>close</mat-icon>
+      </button>
+      
+      <mat-icon class="menu-icones">close</mat-icon>
+      <mat-icon class="menu-icones">close</mat-icon>
+      <mat-icon class="menu-icones">close</mat-icon>
     </div>
-</header>
-<main>
-    <mat-drawer-container>
-        <mat-drawer mode="side" opened>
-            <mat-card>
-                fig1
-            </mat-card>
-            <mat-card>
-                fig1
-            </mat-card>
-            <mat-card>
-                fig1
-            </mat-card>
-            <mat-card>
-                fig1
-            </mat-card>
-        </mat-drawer>
-        <mat-drawer-content>
-            <router-outlet></router-outlet>
-        </mat-drawer-content>
-    </mat-drawer-container>
-</main>
-<footer>
-    <div class="rodape">
-        teste rodapé
+    <div class="componentes-container">
+      <router-outlet></router-outlet>
     </div>
-</footer>
+  </main>
+</div>

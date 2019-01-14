@@ -1,6 +1,21 @@
 <mat-card class="mat-elevation-z8">
-    <span>filtros</span>
+    <form [formGroup]="formFiltro">
+        <mat-expansion-panel [class.mat-expansion-panel]="false" hideToggle>
+            <mat-expansion-panel-header>
+                <mat-panel-title> Filtrar dados </mat-panel-title>
+                <mat-panel-description>
+                    {{ textoFiltro }}
+                </mat-panel-description>
+                <mat-icon matTooltip="Clique para indicar o filtro">search</mat-icon>
+            </mat-expansion-panel-header>
+            <mat-form-field>
+                <input matInput formControlName="conteudoFiltro" placeholder="informe o nome para filtrar">
+            </mat-form-field>
+        </mat-expansion-panel>
+    </form>
+
 </mat-card>
+
 <mat-card class="mat-elevation-z8">
     <mat-card-content>
         <h1 class="titulo-tabelas">teste</h1>
@@ -33,5 +48,8 @@
             <mat-header-row *matHeaderRowDef="colunasMostradas"></mat-header-row>
             <mat-row *matRowDef="let row; columns: colunasMostradas;"></mat-row>
         </mat-table>
+        <mat-paginator [length]="paginaEvento.length" [pageSize]="paginaEvento.pageSize" [pageSizeOptions]="opcoesPagina"
+            (page)="paginacao($event)">
+        </mat-paginator>
     </mat-card-content>
 </mat-card>

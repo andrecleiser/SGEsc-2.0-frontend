@@ -1,20 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ListaAlunosComponent } from './aluno/lista-alunos/lista-alunos.component';
-
-const routes: Routes = [
+const ROTAS: Routes = [
   {
     path: 'alunos',
-    component: ListaAlunosComponent,
-    runGuardsAndResolvers: 'always'
+    loadChildren: './module/aluno/aluno.module#AlunoModule'
   }
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})
-  ],
+  imports: [RouterModule.forRoot(ROTAS)],
   exports: [RouterModule]
 })
 

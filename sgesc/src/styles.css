@@ -1,12 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
 @import "/home/andrecleiser/projetos/normalize/normalize.css";
-@import "@angular/material/prebuilt-themes/pink-bluegrey.css";
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+
+body {
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+
+sgesc-root {
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+}
 
 .cabecalho {
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     height: auto;
+    width: 100%;
 }
 
 .rodape {
@@ -29,4 +39,35 @@
 .titulo-tabelas {
     text-align: center;
     background-color: darkseagreen;
+}
+
+.mensagem-sucesso {
+    color: white !important;
+    background-color: green !important;
+}
+
+.mensagem-sucesso .mat-simple-snackbar-action {
+    color: white;
+}
+
+.mensagem-erro {
+    color: white !important;
+    background-color: red !important;
+}
+
+.mensagem-erro .mat-simple-snackbar-action {
+    color: white;
+}
+
+.mensagem-atencao {
+    color: black !important;
+    background-color: yellow !important;
+}
+
+.mensagem-atencao .mat-simple-snackbar-action {
+    color: black;
+}
+
+fieldset {
+    border: none;
 }

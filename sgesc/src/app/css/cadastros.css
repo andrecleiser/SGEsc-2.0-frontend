@@ -1,0 +1,71 @@
+.flex-container-linha {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-container-coluna {
+    display: flex;
+    flex-direction: column;
+}
+
+.cadastro-container {
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+    width: 60%;
+    max-width: 600px;
+    min-width: 300px;
+    padding: 5px;
+}
+
+.cadastro-container-form {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    background-color: yellow;
+    box-sizing: border-box;
+}
+
+.cadastro-container-itens {
+    display: flex;
+    margin-bottom: .5em;
+}
+
+.cadastro-form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.cadastro-cabecalho {
+    width: 100%;
+    height: auto;
+    background-color: lightslategray;
+    text-align: center;
+    color: white;
+}
+
+.flex-campos-edicao {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.campo-descricao {
+    flex: 1 1 400px;
+}
+
+.cadastro-container-botao-rodape {
+    display: flex;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    justify-content: flex-start;
+}
+
+::ng-deep .mat-form-field {
+    flex: 1;
+    margin-right: 5px;
+}
+
+button {
+   width: 100px;
+   margin-right: 10px;
+}

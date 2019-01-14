@@ -1,14 +1,27 @@
-mat-drawer-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin: 75px 0 55px 0;
+.flex-container {
+    display: flex;
+    flex-direction: column;
 }
 
-mat-card {
-    margin: 5px;
-    height: 40px;
+.grid-container {
+    display: flex;
+    width: 100%;
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: cornsilk;    
+}
+
+.componentes-container {
+    /* background-color: aqua; */
+    width: 100%;    
+}
+.menu-icones {
+    text-align: center;
     width: 40px;
+    height: 40px;
+    margin: 2px
 }

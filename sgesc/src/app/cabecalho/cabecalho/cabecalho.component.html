@@ -1,19 +1,22 @@
-<mat-toolbar class="cabecalho" color="primary" [class.mat-elevation-z8]="true">
-  <mat-toolbar-row>
-    <button mat-icon-button [matMenuTriggerFor]="menugeral">
-      <mat-icon>menu</mat-icon>
-    </button>
+<mat-toolbar class="cabecalho" color="primary">
+  <mat-toolbar-row class="flex-container">
+    <div>
+      <button mat-icon-button [matMenuTriggerFor]="menugeral">
+        <mat-icon>menu</mat-icon>
+      </button>
 
-    <mat-menu #menugeral="matMenu">
-      <button mat-menu-item [matMenuTriggerFor]="listar">Aluno</button>
-    </mat-menu>
+      <mat-menu #menugeral="matMenu">
+        <button mat-menu-item (click)="navegarInicio()">Início</button>
+        <button mat-menu-item [matMenuTriggerFor]="listar">Aluno</button>
 
-    <mat-menu #listar="matMenu">
+      </mat-menu>
+
+      <mat-menu #listar="matMenu">
         <button mat-menu-item (click)="listarTodos()">Listar todos</button>
-    </mat-menu>
-  
+        <button mat-menu-item (click)="novo()">Novo aluno</button>
+      </mat-menu>
+    </div>
     <h2 class="mat-title espaco-esquerda tam-max-nome-empresa">{{ nomeEmpresa }}</h2>
-    <span class="empurrar-direita"></span>
     <div>
       <img matTooltip="Clique para sair" [matTooltipClass]="'tooltip'" src="https://i.stack.imgur.com/atUuf.png" alt="" />
     </div>

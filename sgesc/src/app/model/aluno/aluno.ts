@@ -1,8 +1,9 @@
-import { Endereco } from '../geral/endereco';
-import { Telefone } from '../geral/telefone';
-import { Responsavel } from '../geral/responsavel';
-import { MotivoMatriculaEnum } from 'src/app/enum/motivo-matricula.enum';
 import { DoencaPreExistenteEnum } from 'src/app/enum/doenca-pre-exixtente.enum';
+import { MotivoMatriculaEnum } from 'src/app/enum/motivo-matricula.enum';
+
+import { Endereco } from '../geral/endereco';
+import { Responsavel } from '../geral/responsavel';
+import { Telefone } from '../geral/telefone';
 
 export class Aluno {
     public id: number;

@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { AlunoService } from '../../service/aluno.service';
+
 @Component({
   selector: 'sge-cabecalho',
   templateUrl: './cabecalho.component.html',
@@ -11,12 +13,22 @@ export class CabecalhoComponent implements OnInit {
   @Input()
   public nomeEmpresa: string;
 
-  constructor(private router: Router) { }
+  constructor(
+    private alunoService: AlunoService,
+    private router: Router) { }
 
   ngOnInit() {
   }
 
   public listarTodos(): void {
-    this.router.navigate(['alunos'], { queryParams: {'resumo': 'basico', 'page': 1, 'size': 3} });
+    this.alunoService.navegarRota(0, 5);
+  }
+
+  public navegarInicio(): void {
+    this.router.navigate(['']);
+  }
+
+  public novo(): void {
+    this.router.navigate(['alunos/novo']);
   }
 }

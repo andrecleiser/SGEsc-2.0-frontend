@@ -1,17 +1,14 @@
-import { Observable, of } from 'rxjs';
-import { switchMap, tap } from 'rxjs/operators';
-import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
 
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { environment } from '../../environments/environment';
 import { Aluno } from '../model/aluno/aluno';
-import { AlunoResumo } from '../model/aluno/aluno-resumo';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
+
 export class AlunoService {
 
   constructor(
@@ -20,19 +17,20 @@ export class AlunoService {
 
   public listar(): Observable<Aluno[]> {
     return this.http
-      .get<Aluno[]>(`${environment.endpoints.backend}/alunos`)
-      .pipe(
-        tap((aluno: Aluno[]) => console.log(aluno))
-      );
+      .get<Aluno[]>(`${environment.endpoints.backend}/alunos`);
   }
 
-  public resumir(): Observable<AlunoResumo[]> {
+  public resumir(): Observable<Object[]> {
     return this.http
-      .get<AlunoResumo[]>(`${environment.endpoints.backend}${this.router.url}`)
-      .pipe(
-        switchMap((alunoPaginador: any) => {
-          return of(alunoPaginador.content);
-        })
-      );
+      .get<Object[]>(`${environment.endpoints.backend}${this.router.url}`);
+  }
+
+  public navegarRota(pagina: number, tamanho: number, nome?: string): void {
+    const nomeFiltro = nome ? nome : undefined;
+
+    this.router.navigate(
+      ['alunos'],
+      { queryParams: {'page': pagina, 'size': tamanho, 'nome': nomeFiltro} }
+    );
   }
 }
