@@ -1,8 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { MatRippleModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -15,7 +14,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CabecalhoComponent } from './cabecalho/cabecalho/cabecalho.component';
 import { GeralModule } from './module/geral.module';
-import { TooltipModule } from './module/material/tooltip.module';
 
 @NgModule({
   imports: [
@@ -32,17 +30,14 @@ import { TooltipModule } from './module/material/tooltip.module';
     MatButtonModule,
     MatMenuModule,
     MatCardModule,
-    MatIconModule,
-    MatRippleModule,
-
-    TooltipModule
+    MatIconModule
   ],
-  exports: [MatRippleModule],
+  exports: [],
   declarations: [
     AppComponent,
     CabecalhoComponent
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'pt' }],
 
   bootstrap: [AppComponent]
 })

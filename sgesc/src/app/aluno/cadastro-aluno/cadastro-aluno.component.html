@@ -13,10 +13,19 @@
           </legend>
           <div class="flex-campos-edicao">
             <mat-form-field class="campo-descricao">
-              <input autofocus matInput placeholder="Nome do aluno" formControlName="campocampo-descricao">
-              <button mat-button *ngIf="true" matSuffix mat-icon-button aria-label="Limpar" (click)="campocampo-descricao=''">
+              <input autofocus matInput placeholder="Nome do aluno" formControlName="nome_aluno">
+              <button mat-button *ngIf="true" matSuffix mat-icon-button aria-label="Limpar" (click)="nomeAluno.setValue('')">
                 <mat-icon>close</mat-icon>
               </button>
+              <mat-error *ngIf="nomeAluno.hasError('required')">
+                Nome do aluno é <strong>obrigatório</strong>
+              </mat-error>
+              <mat-error *ngIf="nomeAluno.hasError('minlength')">
+                O nome do aluno <strong>deve ter, pelo menos, 10 caracteres</strong>
+              </mat-error>
+              <mat-error *ngIf="nomeAluno.hasError('maxlength')">
+                O nome do aluno <strong>deve ter, no máximo, 70 caracteres</strong>
+              </mat-error>
             </mat-form-field>
 
             <mat-form-field>
@@ -24,9 +33,12 @@
             </mat-form-field>
 
             <mat-form-field>
-              <input matInput [matDatepicker]="picker" placeholder="Data de nascimento">
+              <input matInput [matDatepicker]="picker" placeholder="Data de nascimento" formControlName="data_nascimento">
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
+              <mat-error *ngIf="dataNascimento.hasError('datafutura')">
+                A data de nascimento do aluno <strong>não pode ser futura</strong>
+              </mat-error>
             </mat-form-field>
 
             <mat-form-field>
@@ -112,7 +124,7 @@
             </div>
           </legend>
         </fieldset>
-        <mat-divider></mat-divider>    
+        <mat-divider></mat-divider>
       </form>
     </main>
     <footer class="cadastro-container-botao-rodape">

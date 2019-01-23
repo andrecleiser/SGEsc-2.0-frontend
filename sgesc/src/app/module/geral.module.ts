@@ -5,18 +5,11 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { AlunoService } from '../service/aluno.service';
 import { MensagemService } from '../service/mensagem.service';
-import { RippleGlobalOptions, MAT_RIPPLE_GLOBAL_OPTIONS } from '@angular/material/core';
-
-const globalRippleConfig: RippleGlobalOptions = {
-    disabled: false,
-    animation: {
-      enterDuration: 300,
-      exitDuration: 1
-    }
-  };
+import { TabelaService } from '../service/tabelas.service';
+import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
 
 @NgModule({
-    imports: [MatTooltipModule],
+    imports: [],
     exports: [
         MatSnackBarModule,
         MatTooltipModule
@@ -29,8 +22,9 @@ export class GeralModule {
             ngModule: GeralModule,
             providers: [
                 AlunoService,
-                MensagemService /*,
-                { provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig } */
+                MensagemService,
+                TabelaService,
+                { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher }
             ]
         };
     }

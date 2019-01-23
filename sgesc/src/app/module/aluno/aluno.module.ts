@@ -10,7 +10,6 @@ import { MatTableModule } from '@angular/material/table';
 import { CadastroAlunoComponent } from '../../aluno/cadastro-aluno/cadastro-aluno.component';
 import { ListaAlunosComponent } from '../../aluno/lista-alunos/lista-alunos.component';
 import { ComponentesPadraoModule } from '../material/componentes-padrao.module';
-// import { TooltipModule } from '../material/tooltip.module';
 import { AlunoRoutingModule } from './aluno-routing.module';
 
 @NgModule({
@@ -24,8 +23,6 @@ import { AlunoRoutingModule } from './aluno-routing.module';
     MatPaginatorModule,
 
     ComponentesPadraoModule,
-
-    // TooltipModule,
 
     AlunoRoutingModule
   ],

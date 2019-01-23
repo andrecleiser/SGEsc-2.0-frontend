@@ -1,4 +1,4 @@
-import { Telefone } from './telefone';
+import { Telefone } from '../geral/telefone';
 
 export class Responsavel {
     public id: number;

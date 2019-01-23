@@ -1,9 +1,9 @@
-import { DoencaPreExistenteEnum } from 'src/app/enum/doenca-pre-exixtente.enum';
-import { MotivoMatriculaEnum } from 'src/app/enum/motivo-matricula.enum';
+import { MotivosMatricula } from 'src/app/model/tabelas/motivos-matricula';
 
 import { Endereco } from '../geral/endereco';
-import { Responsavel } from '../geral/responsavel';
+import { Responsavel } from '../responsavel/responsavel';
 import { Telefone } from '../geral/telefone';
+import { DoencaPreExistente } from '../tabelas/doenca-pre-existente';
 
 export class Aluno {
     public id: number;
@@ -17,7 +17,7 @@ export class Aluno {
     public dataCadastramento: Date;
     public dataInativacao: Date;
     public observacao: string;
-    public motivoMatricula: MotivoMatriculaEnum;
-    public doencaPreExistente: DoencaPreExistenteEnum;
+    public motivoMatricula: MotivosMatricula;
+    public doencaPreExistente: DoencaPreExistente;
     public diaVencimento: number;
 }
